@@ -116,3 +116,15 @@ end
 def set(arr)
 	arr.uniq
 end
+
+#Count the Vowels
+def count_vowels(str)
+	str.count('aeiouAEIOU')
+end
+
+#Filter out Strings from an Array
+def filter_list(arr)
+	arr.delete_if {|x| x.is_a? String}
+end
+
+#return the factorial
