@@ -7,7 +7,18 @@ function factorial(int) {
         for (let i = int; i >= 1; i--) {
             myArray.push(i);
         }
-    } else {
+    } else {function stepsToConvert(str) {
+    const arrayOfLCase = str.match(/[a-z]/g);
+	const arrayOfUCase = str.match(/[A-Z]/g);
+    
+	if(str == ' ' || arrayOfLCase == null || arrayOfUCase == null) {
+		return 0
+	} else if (arrayOfLCase.length > arrayOfUCase.length) {
+		return arrayOfUCase.length
+	} else if (arrayOfLCase.length < arrayOfUCase.length) {
+		return arrayOfLCase.length
+    } else {return arrayOfLCase.length}
+}
         return int
     }
     return myArray.reduce(myReducer);
