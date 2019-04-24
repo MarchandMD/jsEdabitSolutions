@@ -128,3 +128,6 @@ def filter_list(arr)
 end
 
 #return the factorial
+def factorial(int)
+	int.downto(1).inject(:*)
+end
