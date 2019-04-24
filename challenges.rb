@@ -131,3 +131,18 @@ end
 def factorial(int)
 	int.downto(1).inject(:*)
 end
+
+#PI to N Decimal places
+def my_pi(n)
+	pi = Math::PI
+	pi.round(n)
+end
+
+#Minimum Removals to Make Sum Even
+def minimum_removals(arr)
+	if arr.reduce(:+) % 2 == 0
+		0
+	else
+		1
+	end
+end
