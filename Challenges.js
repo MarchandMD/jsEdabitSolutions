@@ -243,3 +243,55 @@ function differenceMaxMin(arr) {
     arr.sort((a, b) => compare(a, b));
     return arr[arr.length - 1] - arr[0];
 }
+
+/* Is the String Empty ? */
+function isEmpty(s) {
+    return s === "" ? true : false;
+}
+
+/* Hamming Distance */
+function hammingDistance(str1, str2) {
+    const trueFalse = [];
+    for (let i = 0; i < str1.length; i++) {
+        if (str1[i] === str2[i]) {
+            trueFalse.push(true)
+        }
+    }
+    return str1.length - trueFalse.length;
+}
+
+/* Same Number of Unique Elements */
+function same(a1, a2) {
+    const youNeekA1 = new Set(a1);
+    const youNeekA2 = new Set(a2);
+
+    return youNeekA1.size == youNeekA2.size ? true : false;
+}
+
+/* Concatenating Two Integer Arrays */
+const concat = (arr1, arr2) => arr1.concat(arr2);
+
+/* Odd product */
+function oddProduct(arr) {
+    const newArr = arr.filter(x => x % 2 > 0);
+    return newArr.reduce((a, b) => a * b);
+}
+
+/* return smaller of two numbers as strings, without converting to integers :) */
+function smallerNum(n1, n2) {
+    if (n2.length < n1.length) {
+        const newStr2 = "0".repeat(Math.abs(n1.length - n2.length)) + n2;
+        return n1 < newStr2 ? n1 : n2;
+    } else if (n1.length < n2.length) {
+        const newStr1 = "0".repeat(Math.abs(n1.length - n2.length)) + n1;
+        return newStr1 < n2 ? n1 : n2;
+    } else if (n1.length == n2.length) {
+        return n1 < n2 ? n1 : n2;
+    }
+}
+
+/* return smaller of two numbers as strings */
+const a1 = parseInt(n1);
+const a2 = parseInt(n2);
+
+return a1 < a2 ? a1.toString() : a2.toString();
