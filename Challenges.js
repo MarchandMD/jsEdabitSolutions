@@ -217,3 +217,29 @@ function stepsToConvert(str) {
         return arrayOfLCase.length
     }
 }
+
+/* 26 Area of a Triangle */
+function triArea(base, height) {
+    return ((base * height) / 2)
+}
+
+/* 27 Even Odd Partition */
+function evenOddPartition(arr) {
+    const evens = [];
+    const odds = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] % 2 == 0 ? evens.push(arr[i]) : odds.push(arr[i])
+    }
+    return [evens, odds];
+}
+
+/* 28. Divisible by 5 */
+const divisibleByFive = n => n % 5 == 0 ? true : false;
+
+/* 29. Difference of Max and Min Numbers in Array */
+function differenceMaxMin(arr) {
+    const compare = (a, b) => a - b;
+    arr.sort((a, b) => compare(a, b));
+    return arr[arr.length - 1] - arr[0];
+}
