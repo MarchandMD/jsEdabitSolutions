@@ -146,3 +146,24 @@ def minimum_removals(arr)
 		1
 	end
 end
+
+#Sum of absolute values
+def get_abs_sum(arr)
+	arr.map{|el| el.abs}.inject(:+)
+end
+
+
+#Spelling it Out: Create a function which takes in a word and spells it out, by consecutively adding letters until the full word is completed.
+def spelling(str)
+	arr = []
+	while str.length > 0 do
+		arr << str
+		str = str.chop
+	end
+	arr.reverse
+end
+
+#find index of first Vowel
+def first_vowel(str)
+	str.index(/[aeiouAEIOU]/)
+end
