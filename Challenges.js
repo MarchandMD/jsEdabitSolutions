@@ -295,3 +295,45 @@ const a1 = parseInt(n1);
 const a2 = parseInt(n2);
 
 return a1 < a2 ? a1.toString() : a2.toString();
+
+/* Exists a Number Higher?*/
+function existsHigher(arr, n) {
+    const maxValue = Math.max(...arr);
+    return maxValue >= n ? true : false;
+}
+
+/* Check if a String Contains only Identical Characters */
+const isIdentical = s => new Set(s).size == 1 ? true : false;
+
+/* X and Y Coordinates */
+function convertCartesian(x, y) {
+    const answerArr = [];
+    for (let i = 0; i < x.length; i++) {
+        answerArr.push([x[i], y[i]]);
+    }
+    return answerArr;
+}
+
+/* remove first/last letter from string */
+function removeFirstLast(str) {
+    if (str.length > 2) {
+        return str.substring(1, str.length - 1);
+    } else {
+        return str;
+    }
+}
+
+/* Fix the Error / Comparing Arrays (Part #2) */
+function checkEquals(arr1, arr2) {
+    const trueFalse = [];
+    if (arr1.length != arr2.length) {
+        return false;
+    } else {
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] == arr2[i]) {
+                trueFalse.push(true)
+            }
+        }
+    }
+    return trueFalse.length == arr1.length ? true : false;
+}
