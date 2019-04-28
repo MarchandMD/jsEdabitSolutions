@@ -337,3 +337,4 @@ function checkEquals(arr1, arr2) {
     }
     return trueFalse.length == arr1.length ? true : false;
 }
+
