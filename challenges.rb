@@ -167,3 +167,32 @@ end
 def first_vowel(str)
 	str.index(/[aeiouAEIOU]/)
 end
+
+#check if an array includes an element
+def check(arr, el)
+	arr.include? el
+end
+
+#remove vowels from string
+def remove_vowels(str)
+    str.delete!("AEIOUaeiou")
+end
+
+#repeat each char of a string n times
+def repeat(str, n)
+	answer = []
+	str.each_char do |c|
+		answer<< c*n
+	end
+	answer.join('')
+end
+
+#sum of cubes, or 0 if nums.length == 0
+def sum_of_cubes(nums)
+	if nums.length == 0
+		0
+	else
+		nums.collect! {|x| x*x*x}
+		nums.inject(:+)
+	end
+end
