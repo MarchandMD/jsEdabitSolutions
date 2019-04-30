@@ -196,3 +196,5 @@ def sum_of_cubes(nums)
 		nums.inject(:+)
 	end
 end
+
+#find unique character strings
