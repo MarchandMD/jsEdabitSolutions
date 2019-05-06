@@ -338,3 +338,22 @@ function checkEquals(arr1, arr2) {
     return trueFalse.length == arr1.length ? true : false;
 }
 
+/* Is the product of an array divisble by the sum of the Array? */
+function divisible(arr) {
+    let product = arr.reduce((a, b) => a * b);
+    let sum = arr.reduce((a, b) => a + b);
+
+    return product % sum == 0 ? true : false;
+}
+
+/* convert an integer to an array of individual integers */
+function toArray(num) {
+    num = num.toString();
+    num = num.split('');
+    return num.map(x => parseInt(x));
+}
+
+/* Convert an array of integers to a single integer */
+function toNumber(arr) {
+    return parseInt(arr.join(''));
+}

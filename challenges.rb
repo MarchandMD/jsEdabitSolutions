@@ -197,4 +197,67 @@ def sum_of_cubes(nums)
 	end
 end
 
-#find unique character strings
+#count adverbs (ending in ly) in a string
+def count_adverbs(sentence)
+	answer = []
+	sentence.gsub!(/[^\w]/, ' ')
+	arr = sentence.split(' ')
+	arr.each do |x|
+		if x.end_with?("ly")
+			answer << x
+		end
+	end
+	answer.length
+end
+
+# find all instances of initial_string in words_array
+def dictionary(initial, words)
+	words.find_all {|el| el.start_with?(initial)}
+end
+
+#return true if a string has same number of x's and o's, else false
+def xo(str)
+	hugs = str.count "oO"
+	kisses = str.count "xX"
+	hugs == kisses ? true : false;
+end
+
+# determine if two strings are anagrams of each other
+def is_anagram(s1, s2)
+	s1 = s1.downcase
+	s2 = s2.downcase
+	
+	arr1 = []
+	arr2 = []
+	
+	s1.each_codepoint {|el| arr1 << el}
+	s2.each_codepoint {|el| arr2 << el}
+	
+	one = arr1.inject(:+)
+	two = arr2.inject(:+)
+	
+	one == two ?  true : false;
+end
+#verbose;like me.... :(
+
+#determine str1 last letter is equal to str2 first letter, and str1 first letter is equal to str2 last letter
+def is_strange_pair(str1, str2)
+	str1[0] == str2[-1] ? str1[-1] == str2[0] ? true: false : false;
+end
+
+#count unique characters in two seperate strings
+def count_unique(s1, s2)
+	word = s1+s2
+	arr = word.split('')
+	arr.uniq.length
+end
+
+#filter strings with repeating characters from an array of strings 
+def identical_filter(arr) 
+	arr.select {|word| word.chars.uniq.length == 1}
+end
+
+#remove first and last letter
+def remove_first_last(str)
+	str.length <= 2 ? str : str.slice(1..-2);
+end
