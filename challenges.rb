@@ -261,3 +261,61 @@ end
 def remove_first_last(str)
 	str.length <= 2 ? str : str.slice(1..-2);
 end
+
+
+# Testing K^K == N?
+def k_to_k(n, k)
+	k**k == n? true: false;
+end
+
+# Amplify the multiples of 4
+def amplify(num)
+	answer = []
+	1.upto(num) do |i|
+		if i%4 == 0
+			answer<<i*10
+		else
+			answer<< i
+		end
+	end
+	answer
+end
+
+#Largest Swap
+def largest_swap(num)
+	num = num.to_s
+	if num[0] > num[-1] || num[0] == num[-1]
+		 true
+	else
+		false
+	end
+end
+
+
+#flip the boolean, or else boolean expected
+def reverse(bool)
+	if bool == true
+		 false
+	elsif bool == false
+		 true
+	else
+		return "boolean expected"
+	end
+end
+
+#return the min, max, length and average value of an array as  an array
+def min_max_len_ave(arr)
+	answers = [arr.min, arr.max, arr.length, (arr.inject(:+).to_f/arr.length.to_f)]
+end
+
+# Find the mean of an array, to two decimal places
+def mean(arr)
+	mean = arr.inject(:+).to_f/arr.length.to_f
+	mean.round(2)
+end
+
+#pull the even numbers from 1 to a given number
+def find_even_nums(num)
+	arr = (1..num).to_a
+	arr.select {|x| x%2 == 0}
+end
