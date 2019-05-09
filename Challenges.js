@@ -357,3 +357,34 @@ function toArray(num) {
 function toNumber(arr) {
     return parseInt(arr.join(''));
 }
+
+// is k^k == n?
+function kToK(n, k) {
+    return Math.pow(k, k) == n ? true : false;
+}
+
+// Case Insensitive Comparison
+function match(s1, s2) {
+    return s1.toLowerCase() == s2.toLowerCase() ? true : false;
+}
+
+// Use RegEx to determine if a string is an even number
+let x = /^\d*[02468]$/
+
+
+// Transform words into Binary Strings
+function convertBinary(str) {
+    answer = [];
+    str = str.toLowerCase();
+    array = str.split('');
+
+    answer = array.map(x => x.charCodeAt())
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] <= 109) {
+            answer.push(0);
+        } else {
+            answer.push(1)
+        }
+    };
+    return answer.join('');
+}
