@@ -319,3 +319,60 @@ def find_even_nums(num)
 	arr = (1..num).to_a
 	arr.select {|x| x%2 == 0}
 end
+
+
+#Create two functions: a left-shift function and a right-shift function. Each function will take in an array and a single parameter: the number of shifts. or, Array#rotate
+def left_shift(arr, num)
+	elements = arr.shift(num%arr.length)
+	arr + elements
+end
+
+def right_shift(arr, num)
+	elements = arr.pop(num%arr.length)
+	arr.unshift(elements).flatten!
+end
+
+#sum the even elements of a 2D array
+def sum_of_evens(arr)
+	arr = arr.flatten!
+	arr = arr.select {|x| x % 2 == 0}
+	if arr.length == 0
+		0
+	else
+		arr.inject(:+)
+	end
+end
+
+#mirror an array
+def mirror(arr)
+	reverse = arr.reverse
+	arr.pop
+	arr + reverse
+end
+
+#Get the file extension from strings in an array
+def get_extension(arr)
+	arr.collect do |file|
+		file.split('.').pop
+	end
+end
+
+#map an array of integer to (+1) odd integers and (-1) even integers
+def transform(arr)
+	arr.collect do |num|
+		if num.odd?
+			num + 1
+		elsif num.even? || num == 0
+			num - 1
+		end
+	end
+end
+
+#replace all instances of a string-range in a string with a hash symbol
+def replace(str, r)
+	 if str.length == 0
+        ""
+    else
+        str.gsub( /[#{r}]/, '#')
+    end
+end
