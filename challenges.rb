@@ -376,3 +376,79 @@ def replace(str, r)
         str.gsub( /[#{r}]/, '#')
     end
 end
+
+def can_alternate(s)    
+    zeros = s.count '0'
+    ones = s.count '1'
+    (zeros - ones).abs <= 1
+end
+
+
+def can_alternate(s)    
+    ((s.count '0') - (s.count '1')).abs <= 1
+end
+
+#Determine if an integer is a power of 2
+def power_of_two(num)
+	Math.log2(num)%2 == 0.0 ? true : Math.log2(num)%2 == 1.0 ? true : false;
+end
+
+#Longest sequence of consecutive zeros in a binary String
+def longest_zero(s)
+	no_ones = s.gsub('1', ' ')
+	array_of_strings = no_ones.split(' ')
+	longest = array_of_strings.map {|x| x.length}.max
+	if longest == nil
+		''
+	else
+	"0" * longest
+	end
+end
+
+# Write a function that returns true if there exists at least one number that is larger than or equal to n
+def exists_higher(arr, n)
+	if arr.length == 0
+		false
+	else
+	arr.sort.pop >= n ? true : false
+	end
+end
+
+#convert a number to an array
+def to_array(num)
+	arr = num.to_s.split('')
+	arr.collect {|x| x.to_i}
+end
+
+#convert an array to an integer
+def to_number(arr)
+	arr.join('').to_i
+end
+
+#determine if a word is between two others
+def is_between(first, last, word)
+	word.between?(first, last)
+end
+
+#determine if a hash has a specific key
+def has_key(hash, key)
+	hash.has_key?(key)
+end
+
+#Write a function that reverses the subarray between the start and end index (inclusive). The rest of the array should be kept the same.
+def ranged_reversal(arr, start, finish)
+	range = arr.slice!(start..finish).reverse!
+	arr.insert(start, range).flatten
+end
+
+#find the lexicographically first and last word of a string
+def first_and_last(s) 
+	arr = s.split('').permutation.to_a
+	arr.collect! {|x| x.join('')}.sort!
+	[arr.shift, arr.pop]
+end
+
+#product of all odd integers of an Arraydef odd_product(arr)
+	arr.delete_if {|x| x%2 == 0}
+	arr.inject(:*)
+end
