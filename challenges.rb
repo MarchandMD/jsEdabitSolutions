@@ -452,3 +452,20 @@ end
 	arr.delete_if {|x| x%2 == 0}
 	arr.inject(:*)
 end
+
+#Create a function that, given a number, returns the corresponding Fibonacci number.
+#for example: fibonacci(3) => 3
+#for example: fibonacci(7) => 21
+
+def fibonacci int
+    x = 1
+    arr = [1, 1]
+    while x <= int 
+        i = arr[x - 1]
+        j = arr[x]
+        sum = i + j
+        arr << sum
+        x += 1
+    end
+    arr[int]
+end
